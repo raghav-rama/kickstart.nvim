@@ -11,7 +11,19 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    {
+      '\\',
+      function()
+        local name = vim.api.nvim_buf_get_name(0)
+        if name == '' or vim.bo.buftype ~= '' or name:match '^gitsigns://' then
+          vim.cmd 'Neotree toggle'
+        else
+          vim.cmd 'Neotree reveal'
+        end
+      end,
+      desc = 'NeoTree reveal',
+      silent = true,
+    },
   },
   opts = {
     filesystem = {
