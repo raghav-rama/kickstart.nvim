@@ -12,4 +12,5 @@ lazy-lock.json
 .DS_Store
 
 .nvimlog
+nvim.log
 
