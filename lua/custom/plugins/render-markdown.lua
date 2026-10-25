@@ -10,6 +10,10 @@ return {
     opts = {
       pipe_table = {
         wrap = true,
+        preset = 'round',
+        cell = 'trimmed',
+        padding = 1,
+        border_enabled = true,
       },
     },
   },
